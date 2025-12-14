@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4dbluestrips</title>
+    <meta name="description" content="">
+
+    <!-- <link rel="icon" href="home/icons/i32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="home/icons/iapple.png" sizes="180x180"> -->
+
+    <meta property="og:title" content="4dbluestrips">
+    <meta name="description" content="new collection" />
+    <meta property="og:description" content="new collection">
+    <meta property="og:image" content="product/bundle.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+
+
+
+
+
+    <meta property="og:site_name" content="4dbluestrips" />
+
+    <meta name="twitter:title" content="4dbluestrips" />
+    <meta name="twitter:description" content="new collection" />
+    <meta name="twitter:card" content="product/bundle.png" />
+    <meta name="twitter:image" content="product/bundle.png" />
+    <!-- <meta name="twitter:creator" content="" /> -->
+
+
+
+    <link rel="icon" href="logo/32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="logo/180.png" sizes="180x180">
+
+
+
+
+
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    video::-webkit-media-controls {
+        display: none !important;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: -0.05vw;
+        color: white;
+
+        font-size: 1.5vw;
+
+    }
+
+    #bg {
+        height: 100%;
+        object-fit: cover;
+        width: auto;
+
+
+    }
+
+    .divs {
+        margin-top: 1vw;
+        width: 60vw;
+        z-index: 2;
+    }
+
+    #top {
+        background-color: #1c4fd8;
+        height: 10vw;
+
+
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 3vw;
+
+
+    }
+
+    #logodiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        color: white;
+
+        cursor: pointer;
+    }
+
+    #logodiv:hover {
+
+        color: #ffa4ed;
+
+
+    }
+
+    #logo {
+        width: 10vw;
+
+    }
+
+    #middiv {
+        display: flex;
+        flex-direction: column;
+        /* display: none; */
+
+        margin-bottom: 1vw;
+    }
+
+    #mid {
+
+
+        width: 45vw;
+        height: auto;
+        background-color: #1c4fd8;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+
+
+
+    }
+
+    #midr {
+
+        margin-left: 1vw;
+        width: 14vw;
+        height: auto;
+        background-color: #1c4fd8;
+        font-size: 1.5vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: end;
+
+
+        text-align: end;
+    }
+
+    #midr video {
+        width: 100%;
+    }
+
+    #midr p {
+        text-align: end;
+        margin-right: 1vw;
+
+    }
+
+
+    .product {
+        display: block;
+        position: relative;
+
+        background-color: #1c4fd8;
+
+        cursor: pointer;
+    }
+
+    .product img {
+        width: 100%;
+        height: 100;
+        display: block;
+
+        object-fit: cover;
+    }
+
+    .product .img2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    /* hover swaps them */
+    .product:hover .img2 {
+        opacity: 1;
+    }
+
+    .price {
+        position: absolute;
+
+        color: white;
+        top: 0;
+        font-size: 5vw;
+        display: none;
+
+
+
+    }
+
+    #ytdiv {
+        width: 45vw;
+
+        height: 10vw;
+        background-color: #1c4fd8;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+        margin-bottom: 1vw;
+    }
+
+    #ytdiv a {
+        width: 100%;
+    }
+
+    #ytdiv video {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .banner {
+        background-color: #1c4fd8;
+        /* margin-bottom: 1vw; */
+
+        font-size: 1.5vw;
+
+    }
+
+    .banner p {
+        margin-left: 1vw;
+    }
+
+    .low {
+        font-size: 1.5vw;
+        margin: 1vw;
+
+        cursor: pointer;
+    }
+
+    .low span:hover {
+        color: #ffa4ed;
+    }
+
+    #profilepic {
+        width: 100%;
+    }
+
+    #productdiv {
+        display: none;
+        /* display: block; */
+
+    }
+
+    #productdivtop {
+
+        display: flex;
+    }
+
+
+    #images {
+        width: 40vw;
+        height: 35vw;
+        background-color: #1c4fd8;
+        display: flex;
+    }
+
+    #main {
+        width: 60%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #subimages {
+        display: flex;
+        flex-direction: column;
+
+        width: 40%;
+    }
+
+    #subimages img {
+        height: 50%;
+        cursor: pointer;
+    }
+
+    #buyright {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1vw;
+        width: 19vw;
+    }
+
+    #buydiv {
+        display: flex;
+        flex-direction: column;
+
+        align-items: end;
+
+
+        text-align: end;
+
+
+        height: auto;
+        background-color: #1c4fd8;
+    }
+
+    #buydiv p {
+        margin: 1vw;
+    }
+
+    #price {
+        font-size: 3vw;
+    }
+
+    #buybutton {
+        text-align: center;
+        margin-top: 1vw;
+        font-size: 3vw;
+        height: auto;
+
+
+        border-radius: 10vw;
+
+        background: linear-gradient(to bottom,
+                #ffffff97 0%,
+                #f0f0f061 45%,
+                #e2e2e2a0 55%,
+                #fafafa6d 100%);
+        background-color: #ff30d6;
+
+        cursor: pointer;
+    }
+
+
+
+    #productdivleft {
+        background-color: #1c4fd8;
+    }
+
+    #title {
+
+
+
+        margin-left: 1vw;
+    }
+
+    #love {
+        margin-top: 1vw;
+    }
+
+    #loveproducts {
+        display: flex;
+        margin-bottom: 1vw;
+    }
+
+    #loveproducts img {
+        width: 20vw;
+        cursor: pointer;
+    }
+
+    #qdiv {
+
+
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    #q {
+        width: auto;
+        height: auto;
+        font-size: 1.5vw;
+        background-color: #1c4fd8;
+        color: white;
+        margin-right: 0;
+        text-align: center;
+
+        border: none;
+    }
+
+    .qside {
+        margin-right: 0;
+        cursor: pointer;
+
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+
+        color: #ffa4ed;
+
+
+    }
+
+    #size {
+        position: absolute;
+        z-index: -1;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        margin-right: 1vw;
+        width: 10vw;
+        height: 3vw;
+        font-size: 1.5vw;
+
+        background: none;
+        background-color: #1c4fd8;
+        color: white;
+        border-radius: 0;
+
+        border: none;
+        outline: none;
+
+        text-align-last: right;
+
+    }
+
+    #size option {
+        text-align: end;
+    }
+
+
+
+    #cig {
+        margin-top: 1vw;
+        width: 50vw;
+    }
+
+    #cartwrap {
+        background-color: #1c4fd8;
+
+        display: none;
+
+    }
+
+    #cartwrap p {
+        margin-left: 1vw;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cart-item * {
+        margin: 1vw;
+    }
+
+    #totaldiv {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        text-align: right;
+        margin-right: 1vw;
+    }
+
+    #checkout {
+        text-align: center;
+
+        float: right;
+        cursor: pointer;
+
+        background: linear-gradient(to bottom,
+                #ffffff97 0%,
+                #f0f0f061 45%,
+                #e2e2e2a0 55%,
+                #fafafa6d 100%);
+        background-color: #ff30d6;
+
+        border-radius: 10vw;
+
+        font-size: 3vw;
+        width: 16vw;
+        margin: 1vw;
+
+    }
+
+    .remove-btn {
+        cursor: pointer;
+    }
+
+    .measure-table {
+        text-align: center;
+        width: 100%;
+    }
+
+    .measure-table th {
+        font-weight: normal;
+    }
+
+    .measure-table th,
+    .measure-table td {
+        /* border: 1px solid #ddd; */
+        padding: 0.5vw;
+        text-align: center;
+    }
+
+    .measure-table tr.active {
+        color: #ffa4ed;
+    }
+
+    .measure-table tr.select:hover {
+        color: #ffa4ed;
+        cursor: pointer;
+    }
+
+    .cartq {
+        text-align: center;
+        background-color: #1c4fd8;
+        font-size: 1.5vw;
+        color: white;
+    }
+
+    @media (max-width: 600px) {
+
+        #cartwrap p {
+            margin-left: 2vw;
+        }
+
+        body {
+            font-size: 4.5vw;
+        }
+
+        .divs {
+            margin-top: 5vw;
+            width: 100vw;
+
+        }
+
+        .banner {
+            font-size: 4.5vw;
+            margin-left: 0;
+            margin-top: 0vw;
+        }
+
+        .banner p {
+
+            margin-left: 2vw;
+        }
+
+        #top {
+            margin-top: 0vw;
+            height: 20vw;
+            font-size: 6vw;
+
+
+        }
+
+        #logo {
+            width: 20vw;
+
+        }
+
+        .low {
+            font-size: 3.5vw;
+            margin-right: 2vw;
+        }
+
+        #middiv {
+            flex-direction: column;
+        }
+
+        #mid {
+
+
+            width: auto;
+            height: auto;
+
+        }
+
+        #midr {
+            display: none;
+            margin-top: 5vw;
+            margin-left: 0vw;
+            width: 25vw;
+
+            font-size: 3.5vw;
+        }
+
+        #midr p {
+            text-align: end;
+            margin-right: 1vw;
+
+
+        }
+
+        #ytdiv {
+            width: 100%;
+
+            height: 25vw;
+            background-color: #1c4fd8;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            margin-bottom: 5vw;
+        }
+
+        #title {
+            margin-left: 2vw;
+        }
+
+
+        #productdivtop {
+
+            display: block;
+        }
+
+        #main {
+            width: 60%;
+            height: 80vw;
+            object-fit: cover;
+        }
+
+        #images {
+            width: 100vw;
+            height: 100%;
+
+
+        }
+
+
+
+        #buyright {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            /* justify-content: space-between;
+            align-items: center; */
+            background-color: #1c4fd8;
+
+            margin-left: 0vw;
+            margin-top: 0vw;
+
+            width: 100vw;
+        }
+
+        #buydiv {
+            width: 60%;
+            margin-left: 0vw;
+            text-align: start;
+
+            align-items: start;
+
+
+            text-align: left;
+
+
+
+        }
+
+        #buydiv p {
+            margin: 2vw;
+        }
+
+
+
+        #price {
+            font-size: 10vw;
+        }
+
+        #buybutton {
+
+
+            margin-right: 0vw;
+            margin-top: 0vw;
+            font-size: 6vw;
+            padding: 3vw;
+            height: auto;
+
+        }
+
+        #love {
+            margin-top: 5vw;
+        }
+
+        #loveproducts {
+
+            margin-bottom: 0vw;
+        }
+
+        #loveproducts img {
+            width: 33.33vw;
+
+        }
+
+
+        #cig {
+            margin-top: 5vw;
+            margin-bottom: 5vw;
+            width: 90vw;
+        }
+
+        #size {
+
+
+            margin-right: 0vw;
+            margin-bottom: 2vw;
+            width: 20vw;
+            height: auto;
+            font-size: 3.5vw;
+
+            text-align-last: left;
+        }
+
+        #q {
+            width: auto;
+            height: auto;
+            font-size: 3.5vw;
+
+            margin-right: 0vw;
+            text-align: center;
+
+
+        }
+
+        #checkout {
+            padding: 3vw;
+            margin: 6vw;
+            width: 25vw;
+            font-size: 6vw;
+            text-align: center;
+
+        }
+
+        #total {
+            margin-right: 2vw;
+        }
+
+        .measure-table {
+            font-size: 4.5vw;
+
+            margin-bottom: 2vw;
+        }
+
+        #des {
+            font-size: 4.5vw;
+        }
+
+        #qdiv {
+            font-size: 4.5vw;
+        }
+
+        #q {
+            font-size: 4.5vw;
+        }
+
+        .cart-item * {
+            font-size: 4.5vw;
+            margin: 2vw;
+        }
+
+        #totaldiv {
+            font-size: 4.5vw;
+
+        }
+    }
+</style>
+
+
+<body>
+    <div class="divs" id="top">
+        <div onclick="home()" id="logodiv">
+            <img id="logo" src="logo/logowhite.png" alt="">
+            <p>4dbluestrips.com</p>
+        </div>
+
+        <p class="low">
+            <span onclick="home();">home</span> | <span onclick="car();">cart</span> | <span>login</span>
+        </p>
+    </div>
+
+
+
+
+    <div class="divs" id="middiv">
+        <div style="display: flex;">
+            <div>
+
+                <div id="ytdiv">
+
+                    <video disablePictureInPicture playsinline loop muted autoplay src="video/intro.mp4"></video>
+
+                </div>
+                <div class="banner">
+                    <p>official merch release</p>
+                </div>
+                <div id="mid">
+                    <div class="product"
+                        onclick=" setitem('30', '80% cotton<br>20% polyester', 'db black', 'product/db black/', 'gid://shopify/ProductVariant/48408075862256', 'gid://shopify/ProductVariant/48408075895024')">
+                        <img class="img1" src="product/db black/1.png" alt="">
+                        <img class="img2" src="product/db black/2.png" alt="">
+
+                        <p class="price">30$</p>
+                    </div>
+
+                    <div class="product"
+                        onclick=" setitem('30', '68% cotton<br>32% poly', 'db gray', 'product/db gray/', 'gid://shopify/ProductVariant/48408441585904', 'gid://shopify/ProductVariant/48408441618672')">
+                        <img class="img1" src="product/db gray/1.png" alt="">
+                        <img class="img2" src="product/db gray/3.png" alt="">
+                        <p class="price">30$</p>
+                    </div>
+                    <div class="product"
+                        onclick="setitem('6', '5 stickers<br>scratchproof', 'stickerpack', 'product/stickers/', 'gid://shopify/ProductVariant/48408743411952')">
+                        <img class="img1" src="product/stickers/2.webp" alt="">
+                        <img class="img2" src="product/stickers/1.webp" alt="">
+                        <p class="price">30$</p>
+                    </div>
+                    <div class="product"
+                        onclick="setitem('10', '5 stickers<br><span style=&quot;color: #ffa4ed&quot;>16% off</span><br>scratchproof', '2x stickerpack', 'product/stickers/', 'gid://shopify/ProductVariant/48408747409648')">
+                        <img src="product/bundle.png" alt="">
+                        <p class="price">50$</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="midr">
+
+                <video id="bg" disablePictureInPicture playsinline loop muted autoplay src="video/gb.mp4"></video>
+                <video disablePictureInPicture playsinline loop muted autoplay src="product/db black/black.mp4"></video>
+                <video disablePictureInPicture playsinline loop muted autoplay src="product/db gray/gray.mp4"></video>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <div class="divs" id="productdiv">
+        <div id="productdivtop">
+            <div id="productdivleft">
+                <p id="title">title</p>
+
+                <div id="images">
+
+                    <img id="main" src="product/db black/1.png" alt="">
+                    <div id="subimages">
+                        <img id="sub1" src="product/db black/2.png" alt="">
+                        <img id="sub2" src="product/db black/3.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="buyright">
+                <div id="buydiv">
+                    <p id="price">30$</p>
+                    <p id="des">description description description description</p>
+
+                    <div id="qdiv">
+
+                        <p>quantity: </p>
+                        <p class="qside" id="ql">
+                            ⬅︎</p>
+                        <input id="q" type="number" min="1" max="99" value="1">
+                        <p class="qside" id="qr">➡︎</p>
+                    </div>
+
+                    <select id="size">
+
+                        <option value="S">small</option>
+                        <option value="M">medium</option>
+
+                    </select>
+
+                    <table class="measure-table" id="mt">
+                        <thead>
+                            <tr>
+                                <th>size</th>
+                                <th>width</th>
+                                <th>length</th>
+                                <th>chest to fit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active select" id="sselect">
+                                <td>S</td>
+                                <td>18"</td>
+                                <td>28"</td>
+                                <td>36"-39"</td>
+                            </tr>
+                            <tr class="select" id="mselect">
+                                <td>M</td>
+                                <td>20"</td>
+                                <td>29"</td>
+                                <td>39"-42"</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+                <div id="buybutton">
+                    <p onclick="tocart()">buy now!</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="banner">
+            <p id="love">u will also love 🤍🤍🤍</p>
+            <div id="loveproducts">
+                <img src="product/db gray/1.png"
+                    onclick="setitem('30', '68% cotton<br>32% poly', 'db gray', 'product/db gray/', 'gid://shopify/ProductVariant/48408441585904', 'gid://shopify/ProductVariant/48408441618672')">
+                <img src="product/stickers/1.webp"
+                    onclick="setitem('6', '5 stickers<br>scratchproof', 'stickerpack', 'product/stickers/', 'gid://shopify/ProductVariant/48408743411952')">
+                <img src="product/bundle.png"
+                    onclick="setitem('10', '10 stickers<br><span style=&quot;color: #ffa4ed&quot;>16% off</span><br>scratchproof', '2x stickerpack', 'product/stickers/', 'gid://shopify/ProductVariant/48408747409648')">
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divs" id="cartwrap">
+        <p>cart</p>
+        <div id="cartdiv">
+
+        </div>
+        <div>
+            <div id="totaldiv">
+
+                <p>total value : </p>
+                <p id="total">0$</p>
+            </div>
+
+
+        </div>
+        <p onclick="checkoutFromCart()" id="checkout">checkout</p>
+
+    </div>
+
+    <video id="cig" disablePictureInPicture muted autoplay loop playsinline preload="auto" src="cig.mp4"></video>
+    <!-- <img id="cig" src="cig.png" alt=""> -->
+
+    <!-- <video id="bg" autoplay playsinline loop muted src="video/bg.mp4"></video> -->
+
+    <!-- <h1>Testing Shopify Storefront API…</h1>
+<pre id="output">loading…</pre> -->
+
+    <script>
+        const input = document.getElementById("q");
+        const left = document.getElementById("ql");
+        const right = document.getElementById("qr");
+
+        function changeValue(delta) {
+            const min = Number(input.min);
+            const max = Number(input.max);
+            let value = Number(input.value) || min;
+
+            value += delta;
+
+            if (value < min) value = min;
+            if (value > max) value = max;
+
+            input.value = value;
+        }
+
+        left.addEventListener("click", () => changeValue(-1));
+        right.addEventListener("click", () => changeValue(1));
+
+        const sSelect = document.getElementById("sselect");
+        const mSelect = document.getElementById("mselect");
+
+        function toggleSize(activeId) {
+            sSelect.classList.remove("active");
+            mSelect.classList.remove("active");
+
+            if (activeId === "S") {
+                sSelect.classList.add("active");
+            }
+            if (activeId === "M") {
+                mSelect.classList.add("active");
+            }
+            size.value = activeId;
+        }
+
+        sSelect.addEventListener("click", () => toggleSize("S"));
+        mSelect.addEventListener("click", () => toggleSize("M"));
+
+
+    </script>
+
+
+    <script>
+        const logo = document.getElementById("logo");
+
+        let toggle = false;
+
+        setInterval(() => {
+            toggle = !toggle;
+            logo.src = toggle ? "logo/logoman.png" : "logo/logowhite.png";
+        }, 500);
+
+        const video = document.getElementById("cig");
+        video.pause();
+
+
+        video.addEventListener("mouseenter", () => {
+            video.play();
+        });
+        video.addEventListener("mousedown", () => {
+            video.play();
+        });
+
+
+        // Pause when released or pointer leaves
+        video.addEventListener("mouseup", () => {
+            video.pause();
+
+        });
+        video.addEventListener("mouseleave", () => {
+            video.pause();
+
+        });
+
+        video.addEventListener("touchstart", () => {
+            document.body.style.userSelect = "none";
+            document.body.style.webkitUserSelect = "none";
+            video.play();
+        });
+        video.addEventListener("touchend", () => {
+            document.body.style.userSelect = "auto";
+            document.body.style.webkitUserSelect = "auto";
+            video.pause();
+
+        });
+
+    </script>
+    <script>
+        function home() {
+            const home = document.getElementById("middiv");
+            home.style.display = "flex";
+
+            document.getElementById("productdiv").style.display = "none";
+        }
+        function prod() {
+            const prod = document.getElementById("productdiv");
+            prod.style.display = "block";
+            document.getElementById("middiv").style.display = "none";
+
+        }
+        function car() {
+            cartwrap.style.display = 'block';
+            document.getElementById("productdiv").style.display = "none";
+            document.getElementById("middiv").style.display = "none";
+
+        }
+
+        const price = document.getElementById("price");
+        const des = document.getElementById("des");
+        const title = document.getElementById("title");
+
+        const main = document.getElementById("main");
+        const sub1 = document.getElementById("sub1");
+        const sub2 = document.getElementById("sub2");
+
+        const q = document.getElementById("q");
+        const size = document.getElementById("size");
+
+
+
+        let variant1;
+        let variant2;
+        let dirs;
+        let currprice;
+
+        const mt = document.getElementById("mt");
+        function setitem(p, d, t, dir, var1, var2) {
+            mt.style.display = "block";
+
+            main.src = dir + "1.png";
+            sub1.src = dir + "2.png";
+            sub2.src = dir + "3.png";
+
+            title.textContent = t;
+            des.innerHTML = d;
+            currprice = p;
+
+            price.textContent = "$" + p;
+
+            q.value = '1'
+
+            if (dir == "product/stickers/") {
+                size.value = "S";
+                mt.style.display = "none";
+
+
+                main.src = dir + "1.webp";
+                sub1.src = dir + "2.webp";
+                sub2.src = dir + "3.webp";
+            }
+
+            variant1 = var1;
+            variant2 = var2;
+            dirs = dir;
+
+
+            prod();
+            scrollToTop();
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+        const cartdiv = document.getElementById("cartdiv");
+        const cartwrap = document.getElementById("cartwrap");
+        let cart = {};
+
+        function tocart() {
+            document.getElementById("productdiv").style.display = "none";
+            document.getElementById("middiv").style.display = "none";
+            cartwrap.style.display = 'block';
+
+            let key;
+
+            if (size.value === "S") {
+                key = variant1;
+            }
+
+            if (size.value === "M") {
+                key = variant2;
+            }
+
+
+
+            const qtyToAdd = parseInt(q.value);
+            if (isNaN(qtyToAdd) || qtyToAdd < 1 || qtyToAdd > 20) return;
+
+            if (cart[key]) {
+                cart[key].qty += qtyToAdd;
+                updateCartDisplay();
+                return;
+            }
+
+            if (dirs != "product/stickers/") {
+                sizeincart = size.options[size.selectedIndex].text;
+            } else {
+                sizeincart = "";
+
+            }
+
+
+
+            cart[key] = {
+                id: key,
+                name: title.textContent,
+                qty: qtyToAdd,
+                size: sizeincart,
+                link: variant1,
+                price: currprice
+            };
+
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            cartdiv.innerHTML = ""; // clear cart before re-render
+            let totalPrice = 0;
+
+            for (let key in cart) {
+                let item = cart[key];
+
+                totalPrice += item.price * item.qty;
+
+                let div = document.createElement("div");
+                div.className = "cart-item";
+
+
+
+                div.innerHTML = `
+                      
+            <p>${item.name} ${item.size} $${item.price}</p>
+
+            <div style="display: flex;">
+                <p>quantity:</p>
+                <input 
+                    type="number" 
+                    min="1" 
+                    max="99" 
+                    value="${item.qty}" 
+                        data-key="${key}"
+                    data-item="${item.name}"
+                    class="qty-input cartq"
+                >
+                     <p class="remove-btn" data-key="${key}">x</p>
+            </div>
+        `;
+
+                cartdiv.appendChild(div);
+            }
+
+            document.getElementById("total").textContent = "$" + totalPrice;
+
+            attachCartEvents();
+
+
+
+        }
+        document.querySelectorAll(".qty-input").forEach(input => {
+            input.addEventListener("input", function () {
+                let key = this.dataset.key;        // ← correct key
+                let newQty = parseInt(this.value);
+
+                if (!isNaN(newQty) && newQty >= 1 && newQty <= 99) {
+                    cart[key].qty = newQty;        // ← now valid
+                }
+
+                updateTotalPrice();
+            });
+        });
+
+        function updateTotalPrice() {
+            let total = 0;
+
+            for (let key in cart) {
+                total += cart[key].price * cart[key].qty;
+            }
+
+            document.getElementById("total").textContent = "$" + total;
+        }
+
+
+        function attachCartEvents() {
+            // remove item
+            document.querySelectorAll(".remove-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const key = btn.dataset.key;
+                    delete cart[key];
+                    updateCartDisplay();
+                });
+            });
+
+            // update quantity
+            document.querySelectorAll(".qty-input").forEach(input => {
+                input.addEventListener("change", () => {
+                    const key = input.dataset.key;
+                    const newQty = parseInt(input.value);
+
+                    if (newQty >= 1 && newQty <= 99) {
+                        cart[key].qty = newQty;
+                    } else {
+                        input.value = cart[key].qty; // reset invalid
+                    }
+
+                    updateCartDisplay();
+                });
+            });
+        }
+
+
+        async function checkoutFromCart() {
+
+            const items = Object.values(cart).map(item => ({
+                variantId: item.id,
+                quantity: item.qty
+            }));
+
+            if (items.length === 0) {
+                alert("Cart is empty!");
+                return;
+            }
+
+            // Call the existing function
+            addMultipleItemsAndCheckout(items);
+        }
+
+
+
+        const STORE_DOMAIN = "g95kvh-vx.myshopify.com";
+        const API_TOKEN = "f4a2297fe7c326ad7868832b8f432f29";
+
+
+    </script>
+
+
+
+    <!-- <script>
+        const STORE_DOMAIN = "g95kvh-vx.myshopify.com";
+        const API_TOKEN = "f4a2297fe7c326ad7868832b8f432f29"; // your token
+
+        testShopify();
+        async function testShopify() {
+            const query = `
+    {
+      products(first: 4) {
+        edges {
+          node {
+            title
+            handle
+            id
+            variants(first: 10) {
+              edges {
+                node {
+                  id
+                  title
+                  price {
+                    amount
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+            const response = await fetch(`https://${STORE_DOMAIN}/api/2024-01/graphql.json`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Shopify-Storefront-Access-Token": API_TOKEN,
+                },
+                body: JSON.stringify({ query })
+            });
+
+            const data = await response.json();
+            console.log(JSON.stringify(data, null, 2));
+        }
+
+
+
+    </script> -->
+
+    <script>
+
+
+        // addMultipleItemsAndCheckout([
+        //     { variantId: "gid://shopify/ProductVariant/48408075862256", quantity: 1 },
+        //     { variantId: "gid://shopify/ProductVariant/48408743411952", quantity: 2 }
+        // ]);
+
+        async function addMultipleItemsAndCheckout(items) {
+            // items = [{ variantId: "...", quantity: 1 }, { variantId: "...", quantity: 2 }]
+            const query = `
+    mutation cartCreate($input: CartInput!) {
+      cartCreate(input: $input) {
+        cart {
+          id
+          checkoutUrl
+        }
+        userErrors {
+          field
+          message
+        }
+      }
+    }
+  `;
+
+            const variables = {
+                input: {
+                    lines: items.map(item => ({
+                        merchandiseId: item.variantId,
+                        quantity: item.quantity
+                    }))
+                }
+            };
+
+            const res = await fetch(`https://${STORE_DOMAIN}/api/2025-07/graphql.json`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Shopify-Storefront-Access-Token": API_TOKEN
+                },
+                body: JSON.stringify({ query, variables })
+            });
+
+            const json = await res.json();
+            console.log("Cart create response:", json);
+
+            if (json.data?.cartCreate?.cart?.checkoutUrl) {
+                window.location.href = json.data.cartCreate.cart.checkoutUrl;
+            } else {
+                console.error("Cart creation failed:", json);
+                alert("Could not create cart. See console.");
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
